@@ -9,6 +9,8 @@ import {
   StatusBar,
   Platform,
 } from "react-native";
+// COLORS
+import colors from "../../config/colors";
 import { AuthNavProps } from "../../types/AuthParamList";
 
 interface SigninProps {}
@@ -17,11 +19,14 @@ export function Signin({ navigation, route }: AuthNavProps<"Signin">) {
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainerStyle}>
-        <View style={styles.leftButtonStyle}></View>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <View style={styles.leftButtonStyle}></View>
+        </TouchableOpacity>
         <View style={styles.rightButtonStyle}></View>
       </View>
       <View style={styles.imageContainerStyle}>
         <Image
+          resizeMode='contain'
           source={require("../../../assets/chair.jpg")}
           style={styles.imageStyle}
         />
@@ -33,18 +38,17 @@ export function Signin({ navigation, route }: AuthNavProps<"Signin">) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
-    backgroundColor: "#000",
+    backgroundColor: colors.black,
   },
   leftButtonStyle: {
-    width: 60,
-    height: 60,
-    backgroundColor: "green",
+    width: 50,
+    height: 50,
+    backgroundColor: colors.secondary,
   },
   rightButtonStyle: {
-    width: 60,
-    height: 60,
-    backgroundColor: "red",
+    width: 50,
+    height: 50,
+    backgroundColor: colors.primary,
   },
   buttonContainerStyle: {
     flex: 0.2,

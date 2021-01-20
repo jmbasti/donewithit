@@ -10,6 +10,8 @@ import {
   StatusBar,
   Platform,
 } from "react-native";
+// COLORS
+import colors from "../../config/colors";
 import { AuthNavProps } from "../../types/AuthParamList";
 
 interface HomeProps {}
@@ -22,10 +24,12 @@ export function Home({ navigation, route }: AuthNavProps<"Home">) {
         style={styles.backgoundImageStyle}
       >
         <View style={styles.logoContainerStyle}>
-          <Image
-            source={require("../../../assets/logo-red.png")}
-            style={styles.logoStyle}
-          />
+          <TouchableOpacity onPress={() => navigation.navigate("Signin")}>
+            <Image
+              source={require("../../../assets/logo-red.png")}
+              style={styles.logoStyle}
+            />
+          </TouchableOpacity>
           <Text style={styles.textStyle}>Sell What You Don't Need!</Text>
         </View>
         <View style={styles.signinStyle}></View>
@@ -61,11 +65,11 @@ const styles = StyleSheet.create({
   signinStyle: {
     width: "100%",
     height: 70,
-    backgroundColor: "#fc5c65",
+    backgroundColor: colors.primary,
   },
   signupStyle: {
     width: "100%",
     height: 70,
-    backgroundColor: "#48cdc4",
+    backgroundColor: colors.secondary,
   },
 });
