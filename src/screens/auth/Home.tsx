@@ -10,6 +10,9 @@ import {
   StatusBar,
   Platform,
 } from "react-native";
+import { AppButton } from "../../components/AppButton";
+import { AppText } from "../../components/AppText";
+
 // COLORS
 import colors from "../../config/colors";
 import { AuthNavProps } from "../../types/AuthParamList";
@@ -20,6 +23,7 @@ export function Home({ navigation, route }: AuthNavProps<"Home">) {
   return (
     <View style={styles.container}>
       <ImageBackground
+        blurRadius={10}
         source={require("../../../assets/background.jpg")}
         style={styles.backgoundImageStyle}
       >
@@ -30,10 +34,28 @@ export function Home({ navigation, route }: AuthNavProps<"Home">) {
               style={styles.logoStyle}
             />
           </TouchableOpacity>
-          <Text style={styles.textStyle}>Sell What You Don't Need!</Text>
+          {/* <Text style={styles.textStyle}>Sell What You Don't Need!</Text> */}
+          {/* ENCAPSULATION */}
+          <AppText>Sell What You Don't Need!</AppText>
         </View>
-        <View style={styles.signinStyle}></View>
-        <View style={styles.signupStyle}></View>
+        {/* <View style={styles.signinStyle}></View> */}
+        {/* <View style={styles.signupStyle}></View> */}
+        <View style={styles.buttonContainer}>
+          <AppButton
+            title='Login'
+            onPress={() => {
+              console.log("Test");
+            }}
+            color='primary'
+          />
+          <AppButton
+            title='Register'
+            onPress={() => {
+              console.log("Test");
+            }}
+            color='secondary'
+          />
+        </View>
       </ImageBackground>
     </View>
   );
@@ -62,14 +84,18 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     justifyContent: "flex-end",
   },
-  signinStyle: {
+  buttonContainer: {
+    padding: 20,
     width: "100%",
-    height: 70,
-    backgroundColor: colors.primary,
   },
-  signupStyle: {
-    width: "100%",
-    height: 70,
-    backgroundColor: colors.secondary,
-  },
+  // signinStyle: {
+  //   width: "100%",
+  //   height: 70,
+  //   backgroundColor: colors.primary,
+  // },
+  // signupStyle: {
+  //   width: "100%",
+  //   height: 70,
+  //   backgroundColor: colors.secondary,
+  // },
 });
