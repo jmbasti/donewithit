@@ -18,11 +18,11 @@ export const Card: React.FC<CardProps> = ({ title, subTitle, image }) => {
         <Text style={styles.subTitleStyle}>{subTitle}</Text>
       </View>
       <View style={styles.userContainer}>
-        <ListItem
+        {/* <ListItem
           image={require("../../assets/mosh.jpg")}
           title='Mosh'
           subTitle='5 Listings'
-        />
+        /> */}
       </View>
     </View>
   );

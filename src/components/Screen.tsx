@@ -11,10 +11,16 @@ import {
 // Constants
 import Constants from "expo-constants";
 
-interface ScreenProps {}
+interface ScreenProps {
+  style?: any;
+}
 
-export const Screen: React.FC<ScreenProps> = ({ children }) => {
-  return <SafeAreaView style={styles.screenStyle}>{children}</SafeAreaView>;
+export const Screen: React.FC<ScreenProps> = ({ children, style }) => {
+  return (
+    <SafeAreaView style={[styles.screenStyle, style]}>
+      <View style={style}>{children}</View>
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
