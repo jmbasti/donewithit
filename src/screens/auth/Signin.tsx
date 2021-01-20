@@ -11,6 +11,7 @@ import {
 } from "react-native";
 // COLORS
 import colors from "../../config/colors";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AuthNavProps } from "../../types/AuthParamList";
 
 interface SigninProps {}
@@ -19,10 +20,18 @@ export function Signin({ navigation, route }: AuthNavProps<"Signin">) {
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainerStyle}>
-        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-          <View style={styles.leftButtonStyle}></View>
-        </TouchableOpacity>
-        <View style={styles.rightButtonStyle}></View>
+        <View>
+          {/* <View style={styles.leftButtonStyle}></View> */}
+          <MaterialCommunityIcons name='close' color='#fff' size={35} />
+        </View>
+        <View>
+          {/* <View style={styles.rightButtonStyle}></View> */}
+          <MaterialCommunityIcons
+            name='trash-can-outline'
+            color='#fff'
+            size={35}
+          />
+        </View>
       </View>
       <View style={styles.imageContainerStyle}>
         <Image
