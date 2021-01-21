@@ -5,12 +5,11 @@ import { ListingDetailsScreen } from "./screens/main/ListingDetailsScreen";
 import { MessagesScreen } from "./screens/main/MessagesScreen";
 import { AccountScreen } from "./screens/main/AccountScreen";
 import { ListingScreens } from "./screens/main/ListingScreens";
-import { AppTextInput } from "./components/AppTextInput";
 import { AppPicker } from "./components/AppPicker";
 import { SafeAreaView } from "react-native";
 import { Screen } from "./components/Screen";
 
-// DUMMY
+// DUMMY`
 import { categories } from "./data/categories";
 import { LoginScreen } from "./screens/auth/LoginScreen";
 
@@ -26,7 +25,7 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
       {/* <MessagesScreen /> */}
       {/* <AccountScreen /> */}
       {/* <ListingScreens /> */}
-      <Screen>
+      {/* <Screen>
         <AppTextInput icon='email' placeholder='Username' />
         <AppPicker
           icon='apps'
@@ -35,8 +34,8 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
           selectedItem={category}
           onSelectItem={(item) => setCategory(item)}
         />
-      </Screen>
-      {/* <LoginScreen /> */}
+      </Screen> */}
+      <LoginScreen />
     </NavigationContainer>
   );
 };
