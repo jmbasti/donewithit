@@ -8,9 +8,9 @@ import {
   TouchableHighlight,
   Animated,
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 // Swipeable
 import Swipeable from "react-native-gesture-handler/Swipeable";
+//CONFIG
 import colors from "../config/colors";
 
 interface ListItemProps {

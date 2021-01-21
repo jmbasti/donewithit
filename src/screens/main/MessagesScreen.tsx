@@ -2,40 +2,13 @@ import React, { useState } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 // Constants
 import Constants from "expo-constants";
+//COMPONENTS
 import { ListItem } from "../../components/ListItem";
 import { Screen } from "../../components/Screen";
 import { ListItemSeparator } from "../../components/ListItemSeparator";
 import { ListItemDeleteAction } from "../../components/ListItemDeleteAction";
-
-console.log(Constants);
-
 // DUMMY DATA
-const initialMessages = [
-  {
-    id: 1,
-    title: "T1",
-    description: "D1",
-    image: require("../../../assets/mosh.jpg"),
-  },
-  {
-    id: 2,
-    title: "T2",
-    description: "D2",
-    image: require("../../../assets/mosh.jpg"),
-  },
-  {
-    id: 3,
-    title: "T3",
-    description: "D3",
-    image: require("../../../assets/mosh.jpg"),
-  },
-  {
-    id: 4,
-    title: "T4",
-    description: "D4",
-    image: require("../../../assets/mosh.jpg"),
-  },
-];
+import { initialMessages } from "../../data/initialMessages";
 
 interface MessagesScreenProps {}
 

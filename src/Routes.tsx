@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { AuthScreen } from "./screens/auth/AuthScreen";
 import { ListingDetailsScreen } from "./screens/main/ListingDetailsScreen";
@@ -6,11 +6,18 @@ import { MessagesScreen } from "./screens/main/MessagesScreen";
 import { AccountScreen } from "./screens/main/AccountScreen";
 import { ListingScreens } from "./screens/main/ListingScreens";
 import { AppTextInput } from "./components/AppTextInput";
+import { AppPicker } from "./components/AppPicker";
 import { SafeAreaView } from "react-native";
+import { Screen } from "./components/Screen";
+
+// DUMMY
+import { categories } from "./data/categories";
 
 interface RoutesProps {}
 
 export const Routes: React.FC<RoutesProps> = ({}) => {
+  //
+  const [category, setCategory] = useState(categories[0]);
   return (
     <NavigationContainer>
       {/* <AuthScreen /> */}
@@ -18,9 +25,16 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
       {/* <MessagesScreen /> */}
       {/* <AccountScreen /> */}
       {/* <ListingScreens /> */}
-      <SafeAreaView>
+      <Screen>
         <AppTextInput icon='email' placeholder='Username' />
-      </SafeAreaView>
+        <AppPicker
+          icon='apps'
+          placeholder='Category'
+          items={categories}
+          selectedItem={category}
+          onSelectItem={(item) => setCategory(item)}
+        />
+      </Screen>
     </NavigationContainer>
   );
 };

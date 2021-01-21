@@ -1,6 +1,8 @@
 import React from "react";
 import { Text, View, ImageProps, StyleSheet, Image } from "react-native";
+// CONFIG
 import colors from "../config/colors";
+//COMPONENTS
 import { ListItem } from "./ListItem";
 
 interface CardProps {

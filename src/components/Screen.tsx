@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  View,
-  FlatList,
-  Text,
-  SafeAreaView,
-  StyleSheet,
-  Platform,
-  StatusBar,
-} from "react-native";
+import { View, SafeAreaView, StyleSheet } from "react-native";
 // Constants
 import Constants from "expo-constants";
 

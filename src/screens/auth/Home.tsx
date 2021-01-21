@@ -10,10 +10,10 @@ import {
   StatusBar,
   Platform,
 } from "react-native";
+// COMPONENT
 import { AppButton } from "../../components/AppButton";
 import { AppText } from "../../components/AppText";
-
-// COLORS
+// CONFIG
 import colors from "../../config/colors";
 import { AuthNavProps } from "../../types/AuthParamList";
 

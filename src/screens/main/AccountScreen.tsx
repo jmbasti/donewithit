@@ -5,25 +5,10 @@ import { ListItem } from "../../components/ListItem";
 import { Icon } from "../../components/Icon";
 import colors from "../../config/colors";
 import { ListItemSeparator } from "../../components/ListItemSeparator";
+// DUMMY DATA
+import { menuItems } from "../../data/menuItems";
 
 interface AccountScreenProps {}
-
-const menuItems = [
-  {
-    title: "My Listings",
-    icon: {
-      name: "format-list-bulleted",
-      backgroundColor: colors.primary,
-    },
-  },
-  {
-    title: "My Messages",
-    icon: {
-      name: "email",
-      backgroundColor: colors.secondary,
-    },
-  },
-];
 
 export const AccountScreen: React.FC<AccountScreenProps> = ({}) => {
   return (

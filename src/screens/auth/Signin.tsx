@@ -9,9 +9,10 @@ import {
   StatusBar,
   Platform,
 } from "react-native";
-// COLORS
-import colors from "../../config/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+// CONFIG
+import colors from "../../config/colors";
+// TYPES
 import { AuthNavProps } from "../../types/AuthParamList";
 
 interface SigninProps {}

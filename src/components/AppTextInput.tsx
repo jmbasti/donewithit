@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { View, StyleSheet, TextInput, Platform } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+// CONFIG
 import colors from "../config/colors";
+
 interface AppTextInputProps {
   icon?: any;
   placeholder: string;

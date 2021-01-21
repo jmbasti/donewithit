@@ -1,5 +1,6 @@
 import React from "react";
 import { View } from "react-native";
+// COMPONENTS
 import { Card } from "../../components/Card";
 
 interface ListingDetailsScreenProps {}
