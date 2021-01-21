@@ -10,7 +10,7 @@ interface ScreenProps {
 export const Screen: React.FC<ScreenProps> = ({ children, style }) => {
   return (
     <SafeAreaView style={[styles.screenStyle, style]}>
-      <View style={style}>{children}</View>
+      <View style={[styles.viewStyle, style]}>{children}</View>
     </SafeAreaView>
   );
 };
@@ -20,6 +20,9 @@ const styles = StyleSheet.create({
     // paddingTop: Platform.OS === "android" ? StatusBar.
     // currentHeight : 0,
     paddingTop: Constants.statusBarHeight,
+    flex: 1,
+  },
+  viewStyle: {
     flex: 1,
   },
 });

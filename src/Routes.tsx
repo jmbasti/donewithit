@@ -12,6 +12,7 @@ import { Screen } from "./components/Screen";
 
 // DUMMY
 import { categories } from "./data/categories";
+import { LoginScreen } from "./screens/auth/LoginScreen";
 
 interface RoutesProps {}
 
@@ -35,6 +36,7 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
           onSelectItem={(item) => setCategory(item)}
         />
       </Screen>
+      {/* <LoginScreen /> */}
     </NavigationContainer>
   );
 };

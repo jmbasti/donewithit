@@ -6,12 +6,18 @@ import colors from "../config/colors";
 
 interface AppTextInputProps {
   icon?: any;
-  placeholder: string;
+  placeholder?: string;
+  keyboardType?: string;
+  textContentType?: string;
+  secureTextEntry?: boolean;
+  onChangeText?: (e: string) => void;
+  onBlur?: () => void;
 }
 
 export const AppTextInput: React.FC<AppTextInputProps> = ({
   icon,
-  ...otherProps
+  placeholder,
+  secureTextEntry,
 }) => {
   return (
     <View style={styles.containerStyle}>
@@ -23,7 +29,13 @@ export const AppTextInput: React.FC<AppTextInputProps> = ({
           style={styles.iconStyle}
         />
       )}
-      <TextInput style={styles.inputStyle} {...otherProps} />
+      <TextInput
+        style={styles.inputStyle}
+        placeholder={placeholder}
+        autoCapitalize='none'
+        autoCorrect={false}
+        secureTextEntry={secureTextEntry}
+      />
     </View>
   );
 };
