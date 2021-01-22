@@ -23,6 +23,7 @@ interface AppPickerProps {
   items: any;
   selectedItem: any;
   onSelectItem: (arg0: any) => void;
+  numberofColumns: number;
 }
 
 interface AppPickerProps {}
@@ -33,6 +34,7 @@ export const AppPicker: React.FC<AppPickerProps> = ({
   placeholder,
   selectedItem,
   onSelectItem,
+  numberofColumns,
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
@@ -65,11 +67,15 @@ export const AppPicker: React.FC<AppPickerProps> = ({
         <Screen>
           <Button title='Close' onPress={() => setModalVisible(false)} />
           <FlatList
+            numColumns={numberofColumns}
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => {
+              //
               return (
                 <PickerItem
+                  icon={item.icon}
+                  color={item.backgroundColor}
                   label={item.label}
                   onPress={() => {
                     setModalVisible(false);

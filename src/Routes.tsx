@@ -25,17 +25,17 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
       {/* <MessagesScreen /> */}
       {/* <AccountScreen /> */}
       {/* <ListingScreens /> */}
-      {/* <Screen>
-        <AppTextInput icon='email' placeholder='Username' />
+      <Screen>
         <AppPicker
+          numberofColumns={3}
           icon='apps'
           placeholder='Category'
           items={categories}
           selectedItem={category}
           onSelectItem={(item) => setCategory(item)}
         />
-      </Screen> */}
-      <LoginScreen />
+      </Screen>
+      {/* <LoginScreen /> */}
     </NavigationContainer>
   );
 };

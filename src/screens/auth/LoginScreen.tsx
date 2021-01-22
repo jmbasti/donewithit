@@ -29,7 +29,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({}) => {
       password: "",
     },
     // YUP VALIDATION SCHEMA
-    validationSchema: Yup.object({
+    validationSchema: Yup.object().shape({
       email: Yup.string()
         .email("Please enter valid email")
         .required("Email Address is required"),
@@ -37,8 +37,9 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({}) => {
         .min(8, ({ min }) => `Password must be at least ${min} characters`)
         .required("Password is required"),
     }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: (values, { resetForm }) => {
+      // CLEAR THE FORM AFTER SUBMISSION
+      setTimeout(resetForm, 2000);
     },
   });
 
@@ -60,6 +61,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({}) => {
           style={styles.inputStyle}
           autoCapitalize='none'
           autoCorrect={false}
+          value={formik.values.email}
           onChangeText={formik.handleChange("email")}
           onBlur={formik.handleBlur("email")}
           placeholder='Email'
@@ -81,6 +83,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({}) => {
           style={styles.inputStyle}
           autoCapitalize='none'
           autoCorrect={false}
+          value={formik.values.password}
           onChangeText={formik.handleChange("password")}
           onBlur={formik.handleBlur("password")}
           placeholder='Password'
