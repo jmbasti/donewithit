@@ -8,6 +8,8 @@ import { ListingScreens } from "./screens/main/ListingScreens";
 import { AppPicker } from "./components/AppPicker";
 import { SafeAreaView } from "react-native";
 import { Screen } from "./components/Screen";
+import { AppImagePicker } from "./components/AppImagePicker";
+import { FormImagePicker } from "./components/FormImagePicker";
 
 // DUMMY`
 import { categories } from "./data/categories";
@@ -25,7 +27,7 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
       {/* <MessagesScreen /> */}
       {/* <AccountScreen /> */}
       {/* <ListingScreens /> */}
-      <Screen>
+      {/* <Screen>
         <AppPicker
           numberofColumns={3}
           icon='apps'
@@ -34,8 +36,10 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
           selectedItem={category}
           onSelectItem={(item) => setCategory(item)}
         />
-      </Screen>
+      </Screen> */}
       {/* <LoginScreen /> */}
+      {/* <AppImagePicker /> */}
+      <FormImagePicker />
     </NavigationContainer>
   );
 };
