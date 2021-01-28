@@ -9,7 +9,7 @@ import { AppPicker } from "./components/AppPicker";
 import { SafeAreaView } from "react-native";
 import { Screen } from "./components/Screen";
 import { AppImagePicker } from "./components/AppImagePicker";
-import { FormImagePicker } from "./components/FormImagePicker";
+// import { FormImagePicker } from "./components/FormImagePicker";
 
 // DUMMY`
 import { categories } from "./data/categories";
@@ -20,6 +20,7 @@ interface RoutesProps {}
 export const Routes: React.FC<RoutesProps> = ({}) => {
   //
   const [category, setCategory] = useState(categories[0]);
+
   return (
     <NavigationContainer>
       {/* <AuthScreen /> */}
@@ -38,8 +39,7 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
         />
       </Screen> */}
       {/* <LoginScreen /> */}
-      {/* <AppImagePicker /> */}
-      <FormImagePicker />
+      <AppImagePicker />
     </NavigationContainer>
   );
 };
